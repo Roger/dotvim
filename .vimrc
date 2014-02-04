@@ -61,6 +61,11 @@ filetype plugin indent on
 
 let NERDTreeHijackNetrw=1
 
+set wildmode=longest:full,full
+set wildmenu
+
+set showmatch
+
 set laststatus=2
 
 set list
