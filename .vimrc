@@ -44,6 +44,7 @@ nnoremap <space>/ :Unite grep:.<cr>
 
 " Airline
 let g:airline_powerline_fonts = 1
+set noshowmode " MODE, it's redundant with airline
 
 
 " Tagbar
