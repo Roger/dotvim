@@ -50,6 +50,11 @@ set noshowmode " MODE, it's redundant with airline
 " Tagbar
 nnoremap <silent> <leader>t :TagbarToggle<CR>
 
+" Search
+set ignorecase
+set incsearch
+set smartcase
+
 " Misc
 
 filetype plugin indent on
