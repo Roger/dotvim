@@ -1,46 +1,62 @@
 set rtp+=~/.vim/bundle/vundle/
-call vundle#rc()
+"call vundle#rc()
+call vundle#begin()
 
 " let Vundle manage Vundle
 " required! 
-Bundle 'gmarik/vundle'
+Plugin 'gmarik/vundle'
 
-Bundle 'ConradIrwin/vim-bracketed-paste'
+Plugin 'ConradIrwin/vim-bracketed-paste'
 
-Bundle 'Lokaltog/vim-easymotion'
-Bundle 'rstacruz/sparkup', {'rtp': 'vim/'}
+Plugin 'Lokaltog/vim-easymotion'
+Plugin 'rstacruz/sparkup', {'rtp': 'vim/'}
 
-Bundle 'majutsushi/tagbar'
+Plugin 'majutsushi/tagbar'
 
-Bundle 'Valloric/YouCompleteMe'
-Bundle 'SirVer/ultisnips'
+Plugin 'Valloric/YouCompleteMe'
+Plugin 'SirVer/ultisnips'
 
-Bundle 'scrooloose/nerdtree'
+Plugin 'scrooloose/nerdtree'
 
-Bundle 'bling/vim-airline'
+Plugin 'tpope/vim-vinegar'
+
+Plugin 'bling/vim-airline'
 
 " Git
-Bundle 'tpope/vim-fugitive'
-Bundle 'gregsexton/gitv'
-Bundle 'airblade/vim-gitgutter'
+Plugin 'tpope/vim-fugitive'
+Plugin 'gregsexton/gitv'
+Plugin 'airblade/vim-gitgutter'
 
 " Unite and deps
-Bundle 'Shougo/unite.vim'
-Bundle 'Shougo/vimproc.vim'
+Plugin 'Shougo/unite.vim'
+Plugin 'Shougo/vimproc.vim'
 
 " Syntax check
-Bundle 'scrooloose/syntastic'
+Plugin 'scrooloose/syntastic'
+
+" Haxe
+Plugin 'jdonaldson/vaxe'
 
 " Python
-"Bundle 'klen/python-mode'
-Bundle 'lepture/vim-jinja'
-Bundle 'elzr/vim-json'
-Bundle 'jmcantrell/vim-virtualenv'
+"Plugin 'klen/python-mode'
+Plugin 'lepture/vim-jinja'
+Plugin 'elzr/vim-json'
+Plugin 'jmcantrell/vim-virtualenv'
 
 " Color Scheme
-Bundle 'jonathanfilip/vim-lucius'
+Plugin 'jonathanfilip/vim-lucius'
 
-Bundle 'tpope/vim-repeat'
-Bundle 'tpope/vim-surround'
-Bundle 'tpope/vim-dispatch'
+Plugin 'tpope/vim-repeat'
+Plugin 'tpope/vim-surround'
+Plugin 'tpope/vim-dispatch'
 
+" React
+Plugin 'pangloss/vim-javascript'
+Plugin 'mxw/vim-jsx'
+
+" DartLang
+"Plugin 'rbtnn/dart-vim-plugin'
+
+Plugin 'ivanov/vim-ipython'
+
+call vundle#end()

@@ -1,8 +1,14 @@
+" Don't use the powerline from arch package =/
+let g:powerline_loaded = 1
+
 set nocompatible              " be iMproved
 filetype off                  " required!
 
 source ~/.vim/bundles.vim
 source ~/.vim/utils.vim
+
+" Don't unload buffers when they are not displayed
+set hidden
 
 " Color Theme
 set t_Co=256
@@ -45,15 +51,24 @@ nnoremap <space>/ :Unite grep:.<cr>
 " Airline
 let g:airline_powerline_fonts = 1
 set noshowmode " MODE, it's redundant with airline
+" Enable the list of buffers
+let g:airline#extensions#tabline#enabled = 1
+" Show just the filename
+let g:airline#extensions#tabline#fnamemod = ':t'
+
 
 
 " Tagbar
-nnoremap <silent> <leader>t :TagbarToggle<CR>
+nnoremap <F7> :TagbarToggle<CR>
 
 " Search
 set ignorecase
 set incsearch
 set smartcase
+set hlsearch
+" Hide highlight
+nmap <silent> <leader>n :silent :nohlsearch<CR>
+
 
 " Misc
 
@@ -68,9 +83,9 @@ set showmatch
 
 set laststatus=2
 
-set list
-set listchars=trail:·
-set listchars+=tab:»·
+"set list
+"set listchars=trail:·
+"set listchars+=tab:»·
 
 syntax on " Syntax highlighting
 
@@ -89,11 +104,19 @@ nnoremap <silent> <leader>e :call <SID>ExecAndRestore("%s/\t/ /g")<CR>
 nnoremap <silent> <leader>s :call <SID>ExecAndRestore('%s/\s\+$//e')<CR>
 
 " Change directory the current file's
-autocmd BufEnter * lcd %:p:h
+function! ChgPath()
+  " change window directory if exists
+  if isdirectory(expand('%:p:h'))
+    lcd %:p:h
+  endif
+endfunction
+au BufEnter * call ChgPath()
 
 " Tabs Nav
-map <C-n> :tabnext<CR>
-map <C-p> :tabprev<CR>
+"map <C-n> :tabnext<CR>
+"map <C-p> :tabprev<CR>
+map <C-n> :bnext<CR>
+map <C-p> :bprev<CR>
 
 " Central Temp Files Directory
 set undodir=~/.vim/tmp/undo/
@@ -105,3 +128,16 @@ set backup
 
 " Restore last cursor position
 au BufReadPost * if line("'\"") > 1 && line("'\"") <= line("$") | exe "normal! g'\"" | endif
+
+" [YCM] remove preview window
+set completeopt-=preview
+
+" VAXE
+let g:vaxe_lime_target="linux -neko -64"
+
+map <F5> :Dispatch<CR>
+autocmd FileType haxe map <F5> :exec "Dispatch build_lime " .vaxe_working_directory<CR>
+
+
+" quit buffer
+nmap <leader>q :bp <BAR> bd #<CR>
