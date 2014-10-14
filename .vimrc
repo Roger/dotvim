@@ -15,6 +15,10 @@ source ~/.vim/utils.vim
 " Don't unload buffers when they are not displayed
 set hidden
 
+" Use , as <leader>
+let mapleader = ","
+let g:mapleader = ","
+
 " Color Theme
 set t_Co=256
 set background=dark
@@ -72,7 +76,7 @@ set incsearch
 set smartcase
 set hlsearch
 " Hide highlight
-nmap <silent> <leader>n :silent :nohlsearch<CR>
+nmap <silent> <leader>n :nohlsearch<CR>
 
 
 " Misc
@@ -98,10 +102,6 @@ scriptencoding utf-8
 
 set autoindent
 set backspace=indent,eol,start
-
-" Use , as <leader>
-let mapleader = ","
-let g:mapleader = ","
 
 " Expand tabs
 nnoremap <silent> <leader>e :call <SID>ExecAndRestore("%s/\t/ /g")<CR>
@@ -136,6 +136,7 @@ au BufReadPost * if line("'\"") > 1 && line("'\"") <= line("$") | exe "normal! g
 
 " [YCM] remove preview window
 set completeopt-=preview
+let g:ycm_global_ycm_extra_conf = '~/.ycm_extra_conf.py'
 
 " VAXE
 let g:vaxe_lime_target="linux -neko -64"
@@ -146,3 +147,6 @@ autocmd FileType haxe map <F5> :exec "Dispatch build_lime " .vaxe_working_direct
 
 " quit buffer
 nmap <leader>q :bp <BAR> bd #<CR>
+
+" Disable conceal on vim json
+let g:vim_json_syntax_conceal = 0
