@@ -140,9 +140,12 @@ let g:ycm_global_ycm_extra_conf = '~/.ycm_extra_conf.py'
 
 " VAXE
 let g:vaxe_lime_target="linux -neko -64"
+let g:vaxe_flow_target="linux"
 
 map <F5> :Dispatch<CR>
-autocmd FileType haxe map <F5> :exec "Dispatch build_lime " .vaxe_working_directory<CR>
+" autocmd FileType haxe map <F5> :exec "Dispatch build_lime " .vaxe_working_directory<CR>
+autocmd FileType haxe map <F5> :exec "Dispatch build_flow"<CR>
+autocmd FileType haxe map <F6> :exec "Dispatch build_flow web"<CR>
 
 
 " quit buffer
