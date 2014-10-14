@@ -14,7 +14,7 @@ Plugin 'rstacruz/sparkup', {'rtp': 'vim/'}
 Plugin 'majutsushi/tagbar'
 
 Plugin 'Valloric/YouCompleteMe'
-Plugin 'SirVer/ultisnips'
+" Plugin 'SirVer/ultisnips'
 
 Plugin 'scrooloose/nerdtree'
 

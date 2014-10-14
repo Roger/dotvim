@@ -4,6 +4,11 @@ let g:powerline_loaded = 1
 set nocompatible              " be iMproved
 filetype off                  " required!
 
+if has('neovim')
+  let s:python_host_init = 'python -c "import neovim; neovim.start_host()"'
+  let &initpython = s:python_host_init
+endif
+
 source ~/.vim/bundles.vim
 source ~/.vim/utils.vim
 
