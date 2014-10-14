@@ -59,4 +59,10 @@ Plugin 'mxw/vim-jsx'
 
 Plugin 'ivanov/vim-ipython'
 
+" clojure repl
+Plugin 'tpope/vim-fireplace'
+
+" rainbow paratheses
+Plugin 'amdt/vim-niji'
+
 call vundle#end()
